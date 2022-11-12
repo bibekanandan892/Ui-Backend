@@ -7,7 +7,6 @@ import io.ktor.server.application.*
 import org.koin.java.KoinJavaComponent
 
 fun Application.configureRouting() {
-
     routing {
         val uiDataSource: UiDataSource by KoinJavaComponent.inject(UiDataSource::class.java)
         rootRoute()

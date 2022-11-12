@@ -26,7 +26,7 @@ class ApplicationTest {
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
-            assertEquals("Hello World!", bodyAsText())
+            assertEquals("Welcome to Ktor UI Server", bodyAsText())
         }
     }
 }
