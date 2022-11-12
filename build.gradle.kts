@@ -24,6 +24,15 @@ repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
 }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "11"
+}
+
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
 
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
