@@ -1,11 +1,8 @@
 package com.example.routes
 
-import com.example.domain.model.ApiResponse
 import com.example.domain.model.Endpoint
 import com.example.domain.model.ui.DetailsColumn
-import com.example.domain.model.ui.RowItem
 import com.example.domain.repository.UiDataSource
-import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
@@ -40,24 +37,24 @@ private suspend fun PipelineContext<Unit, ApplicationCall>.updateDetailsColumnUI
     uiDataSource: UiDataSource,
     updateDetailsColumnUI: DetailsColumn
 ) {
-    val response = uiDataSource.updateDetailsColumn(
-        uiId = uiId,
-        detailsColumnUi = updateDetailsColumnUI
-    )
-    if (response) {
-        app.log.info("Row Item UI SUCCESSFULLY UPDATED")
-        call.respond(
-            message = ApiResponse(
-                success = true,
-                message = "Successfully Updated!"
-            ),
-            status = HttpStatusCode.OK
-        )
-    } else {
-        app.log.info("ERROR UPDATING THE Row Item UI")
-        call.respond(
-            message = ApiResponse(success = false),
-            status = HttpStatusCode.BadRequest
-        )
-    }
+//    val response = uiDataSource.updateDetailsColumn(
+//        uiId = uiId,
+//        detailsColumnUi = updateDetailsColumnUI
+//    )
+//    if (response) {
+//        app.log.info("Row Item UI SUCCESSFULLY UPDATED")
+//        call.respond(
+//            message = ApiResponse(
+//                success = true,
+//                message = "Successfully Updated!"
+//            ),
+//            status = HttpStatusCode.OK
+//        )
+//    } else {
+//        app.log.info("ERROR UPDATING THE Row Item UI")
+//        call.respond(
+//            message = ApiResponse(success = false),
+//            status = HttpStatusCode.BadRequest
+//        )
+//    }
 }

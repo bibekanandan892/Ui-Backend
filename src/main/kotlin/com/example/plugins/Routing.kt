@@ -12,6 +12,7 @@ fun Application.configureRouting() {
         rootRoute()
         saveUiRoute(application,uiDataSource)
         getUiRoute(application,uiDataSource)
+        updateGridItem(application,uiDataSource)
         updateMainScreenRoute(application,uiDataSource)
         updateDetailsColumnRoute(application,uiDataSource)
         updateImageUiRoute(application,uiDataSource)

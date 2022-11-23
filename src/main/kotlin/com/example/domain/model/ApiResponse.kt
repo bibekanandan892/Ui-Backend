@@ -1,6 +1,6 @@
 package com.example.domain.model
 
-import com.example.domain.model.ui.UI
+import com.example.domain.model.isuApp.UI
 import kotlinx.serialization.Serializable
 
 @Serializable

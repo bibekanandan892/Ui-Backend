@@ -1,7 +1,7 @@
 package com.example.routes
 
 import com.example.domain.model.Endpoint
-import com.example.domain.model.ui.UI
+import com.example.domain.model.isuApp.UI
 import com.example.domain.model.ui.UiRequest
 import com.example.domain.repository.UiDataSource
 import io.ktor.server.application.*
@@ -15,11 +15,9 @@ fun Route.saveUiRoute(
     uiDataSource: UiDataSource
 ) {
     post(Endpoint.SaveUi.path) {
-
         val request = call.receive<UiRequest>()
-
         if (request.UI.id.isNotEmpty()) {
-            if (request.UI.id == "123") {
+            if ( uiDataSource.getUIInfo(request.UI.id) == null) {
                 saveUserToDatabase(
                     app = app,
                     mainUI = request.UI,
@@ -27,10 +25,8 @@ fun Route.saveUiRoute(
                 )
             }
         } else {
-            app.log.info("EMPTY TOKEN ID ")
             call.respondRedirect(Endpoint.Unauthorized.path)
         }
-
     }
 }
 

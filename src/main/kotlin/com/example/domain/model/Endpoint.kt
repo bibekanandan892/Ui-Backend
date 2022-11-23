@@ -14,4 +14,5 @@ sealed class Endpoint(val path : String){
     object SignOut : Endpoint(path = "/sign_out")
     object Unauthorized : Endpoint(path = "/unauthorized")
     object Authorized : Endpoint(path = "/authorized")
+    object UpdateGridItem : Endpoint(path = "/update_grid_item")
 }
