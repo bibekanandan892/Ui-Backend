@@ -14,6 +14,7 @@ fun Application.configureRouting() {
         getUiRoute(application,uiDataSource)
         updateGridItem(application,uiDataSource)
         updateMainScreenRoute(application,uiDataSource)
+        getAllUser(application,uiDataSource)
         updateDetailsColumnRoute(application,uiDataSource)
         updateImageUiRoute(application,uiDataSource)
         updateRowItemRoute(application,uiDataSource)

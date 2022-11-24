@@ -32,6 +32,12 @@ class UiDataSourceImpl(database: CoroutineDatabase) : UiDataSource {
         )).wasAcknowledged()
     }
 
+    override suspend fun getAllUser(): List<String> {
+        return ui.find().toList().map {
+            ui -> ui.id
+        }
+    }
+
     override suspend fun deleteUI(uiId: String): Boolean {
         return ui.deleteOne(filter = UI::id eq uiId).wasAcknowledged()
     }

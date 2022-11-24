@@ -11,6 +11,8 @@ interface UiDataSource {
     suspend fun updateGridItem(uiId : String, gridUpdateRequest: GridUpdateRequest) : Boolean
 
 
+    suspend fun getAllUser():  List<String>
+
     suspend fun deleteUI(uiId : String) : Boolean
     suspend fun updateImageUI(
         uiId: String ,
